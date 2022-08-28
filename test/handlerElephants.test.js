@@ -36,3 +36,13 @@ it('Não passando argumentos a função deve retornar undefined', () => {
   const expected = undefined;
   expect(actual).toBe(expected);
 });
+it('Passando um argumento que não seja string, a função deve retornar a mensagem de parâmetro inválido', () => {
+  const actual = handlerElephants(1011);
+  const expected = 'Parâmetro inválido, é necessário uma string';
+  expect(actual).toBe(expected);
+});
+it('Passando argumentos inválidos, a função deve retornar null', () => {
+  const actual = handlerElephants('testing');
+  const expected = null;
+  expect(actual).toBe(expected);
+});
