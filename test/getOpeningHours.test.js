@@ -41,3 +41,9 @@ it('Para os argumentos Saturday e C9:00-AM deve lançar uma exceção com a mens
 it('Para os argumentos Sunday e 09:c0-AM deve lançar uma exceção com a mensagem: The minutes should represent a number', () => {
   expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrow();
 });
+it('Para os argumentos Friday e 15:00-AM deve lançar uma exceção com a mensagem: The hour must be between 0 and 12', () => {
+  expect(() => getOpeningHours('Friday', '15:00-AM')).toThrow();
+});
+it('Para os argumentos Friday e 10:155-AM deve lançar uma exceção com a mensagem: The minutes must be between 0 and 59', () => {
+  expect(() => getOpeningHours('Friday', '10:155-AM')).toThrow();
+});
